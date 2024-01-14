@@ -1,1 +1,3 @@
-# python_leetcode
+# Python Leetcode
+
+Collection of the leetcode questions I have solved with python
