@@ -1,5 +1,6 @@
-questionName = ""
+# python3 create_file.py 
 
+import sys
 
 def createLCSol(name: str):
     words = name.split(" ")
@@ -14,4 +15,4 @@ def createLCSol(name: str):
         print("file already exists")
 
 if __name__ == "__main__":
-    createLCSol(questionName)
+    createLCSol(sys.argv[1])
