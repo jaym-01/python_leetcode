@@ -15,4 +15,5 @@ def createLCSol(name: str):
         print("file already exists")
 
 if __name__ == "__main__":
-    createLCSol(sys.argv[1])
+    # createLCSol(sys.argv[1])
+    createLCSol("Word Break")
