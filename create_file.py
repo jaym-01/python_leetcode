@@ -16,4 +16,4 @@ def createLCSol(name: str):
 
 if __name__ == "__main__":
     # createLCSol(sys.argv[1])
-    createLCSol("House Robber")
+    createLCSol("Longest Substring Without Repeating Characters")
