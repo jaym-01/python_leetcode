@@ -2,46 +2,24 @@ from typing import List
 
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        self.mem = {"":True}
+        self.mem = [ -1 ] * len(s)
+        return self._helper(s, wordDict, 0)
 
-        return self.helper(s, wordDict)
-    
-    def helper(self, s: str, wordDict: List[str]) -> bool:
-        if s == "":
+    def _helper(self, s, wordDict, i):
+        if i == len(s): 
             return True
-        else:
-            # for word in wordDict:
-            #     tmp = s.find(word)
-            #     while tmp != -1:
-            #         left = s[:tmp]
-            #         right = s[tmp + len(word):]
-
-            #         self.helper(left, wordDict)
-
-            #         self.helper(right, wordDict)
-                    
-
-            #         if self.mem[left] and self.mem[right]:
-            #             self.mem[s] = True
-            #             return True
-
-            #         tmp = s.find(word, tmp + 1)
-            
-            # self.mem[s] = False
-
-            for i in range(0, len(s)):
-                tmpS = s[:i+1]
-
-                if tmpS in wordDict:
-                    if self.helper(s[i+1:], wordDict) == True:
+        elif self.mem[i] == -1:
+            for word in wordDict:
+                if len(word) + i <= len(s) and s[i:len(word)] == word:
+                    self.mem[i] = int(self._helper(s, wordDict, i + len(word)))
+                    if bool(self.mem[i]):
                         return True
-                    else:
-                        self.mem[tmpS] = False
-                else:
-                    self.mem[tmpS] = False
+            self.mem[i] = 0
         
-        return False
-
+        return bool(self.mem[i])
+    
 if __name__ == "__main__":
-    test = Solution()
-    print(test.wordBreak("applepenapple", ["apple","pen"]))
+    # test = Solution()
+
+    # test.wordBreak()
+    print([-1]*10)
