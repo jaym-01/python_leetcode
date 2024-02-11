@@ -16,4 +16,4 @@ def createLCSol(name: str):
 
 if __name__ == "__main__":
     # createLCSol(sys.argv[1])
-    createLCSol("Letter Combinations of a Phone Number")
+    createLCSol("Binary Tree Maximum Path Sum")
