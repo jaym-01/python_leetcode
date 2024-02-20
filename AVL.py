@@ -55,6 +55,8 @@ class AVL:
         # making swaps
         A.right = BL
         root.left = A
+
+        # TODO: update heights after rotate
         
         return root
         
@@ -66,6 +68,8 @@ class AVL:
 
         A.left = BR
         root.right = A
+
+        # TODO: update heights after rotate
 
         return root
 
