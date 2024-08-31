@@ -1,6 +1,6 @@
-# note that array does not have constant complexity for appending
+# note that arrays do not have a contant time complexity when appending elements
 # to solve this issue, a doubly linked list can be used
-# and only a pointer to the top of the stack kept for the stack
+# and only a pointer to the top of the stack kept
 # and another doubly linked list mainting the order
 
 class MinStack:
