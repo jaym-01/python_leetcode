@@ -1,5 +1,26 @@
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+
+        max_d = 0
+        def solution(root: Optional[TreeNode]) -> tuple[int, int]:
+            nonlocal max_d
+            if not root:
+                return 0
+            else:
+                l = solution(root.left)
+                r = solution(root.right)
+
+                max_d = max(max_d, l + r)
+
+                return max(l, r) + 1
+
+        solution(root)
+
+        return max_d
+
+# worse solution
+class Solution2:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         def solution(root: Optional[TreeNode]) -> tuple[int, int]:
             if root == None:
                 return 0, 0
